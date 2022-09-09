@@ -1,0 +1,134 @@
+// functions
+@function tint-color($color, $weight) {
+  @return mix(#fff, $color, $weight);
+}
+
+@import "~bootstrap/scss/functions";
+
+// scss-docs-start color-variables
+$blue: #0d6efd;
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #d63384;
+$red: #dc3545;
+$orange: #fd7e14;
+$yellow: #ffc107;
+$green: #198754;
+$teal: #20c997;
+$cyan: #0dcaf0;
+
+// color variables override
+$primary: #146eb4;
+$secondary: #232f3e;
+$warning: #ff9900;
+$dark: #000;
+$success: $teal;
+$danger: tint-color($red, 16%);
+$light: #f2f2f2;
+$body-bg: $light;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "warning": $warning,
+  "success": $success,
+  "dark": $dark,
+  "light": $light,
+  "danger": $danger,
+);
+
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~bootstrap/scss/variables.scss";
+@import "~bootstrap/scss/mixins.scss";
+@import "~bootstrap/scss/root.scss";
+
+// ========global changes===========
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.section {
+  min-height: 100vh;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.section {
+  min-height: 100vh;
+}
+
+.main {
+  position: relative;
+  top: 11vh;
+}
+
+.btn:active,
+.btn:focus {
+  border: none !important;
+  box-sizing: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.form-control:active,
+.form-control:focus {
+  box-shadow: 0 0 5px $orange;
+  border: none;
+}
+
+.btn {
+  border: none;
+}
+
+// ===========navbar==========
+.toggler-icon {
+  height: 3px;
+  width: 30px;
+  border-radius: 10px;
+  background-color: $warning;
+  margin-bottom: 5px;
+  transition: all 400ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.navbar-toggler:active,
+.navbar-toggler:focus {
+  outline: none;
+  box-sizing: none;
+  border: none;
+}
+
+.navbar-toggler .bar-1 {
+  transform-origin: top left;
+  transform: translate(0, 0) rotate(45deg);
+}
+
+.navbar-toggler .bar-2 {
+  opacity: 0;
+}
+
+.navbar-toggler .bar-3 {
+  transform-origin: bottom left;
+  transform: translate(0, 3.5px) rotate(-45deg);
+}
+
+.navbar-toggler.collapsed .bar-1,
+.navbar-toggler.collapsed .bar-2,
+.navbar-toggler.collapsed .bar-3 {
+  transform: translate(0, 0) rotate(0);
+  opacity: 1;
+}
+
+// =========Home section===========//
+.home-section {
+  background: linear-gradient();
+}
